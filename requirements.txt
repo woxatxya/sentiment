@@ -1,0 +1,15 @@
+appdirs==1.4.3
+click==7.1.1
+distlib==0.3.0
+filelock==3.0.12
+Flask==1.0.2
+importlib-metadata==1.5.0
+itsdangerous==1.1.0
+Jinja2==2.11.1
+MarkupSafe==1.1.1
+nltk==3.4.5
+numpy==1.18.1
+six==1.14.0
+virtualenv==20.0.10
+Werkzeug==1.0.0
+zipp==3.1.0
