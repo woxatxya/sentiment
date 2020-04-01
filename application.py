@@ -86,7 +86,7 @@ def say_hello():
 
 '''
 @application.route('/',methods=['GET','POST'])
-def say_hello():
+def senti_ana():
     f = open('my_classifier.pickle', 'rb')
     model = pickle.load(f)
     f.close()
