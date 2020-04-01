@@ -9,6 +9,11 @@ import re
 import string
 #import random
 import nltk
+nltk.download('averaged_perceptron_tagger')
+nltk.download('wordnet')
+nltk.download('stopwords')
+nltk.download('punkt')
+
 from nltk.tag import pos_tag, pos_tag_sents
 from nltk.stem.wordnet import WordNetLemmatizer
 from nltk.corpus import stopwords
@@ -22,10 +27,7 @@ import flask
 from flask import request
 from flask import Flask
 
-#nltk.download('averaged_perceptron_tagger')
-#nltk.download('wordnet')
-#nltk.download('stopwords')
-#nltk.download('punkt')
+
 
 application = Flask(__name__)
 
