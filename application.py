@@ -87,19 +87,22 @@ def say_hello():
 '''
 @application.route('/',methods=['GET','POST'])
 def senti_ana():
-    f = open('my_classifier.pickle', 'rb')
-    model = pickle.load(f)
-    f.close()
-    
-    raw_tweets =request.get_json()
-    tweets = clean_tweets(raw_tweets)
-    sentiments = []
-    
-    for tweet in tweets:
-        print(tweet[1])
-        sentiments.append(test(model, tweet[1]))
+    if request.method == 'POST':
+        f = open('my_classifier.pickle', 'rb')
+        model = pickle.load(f)
+        f.close()
         
-    tweets = generate_json(tweets,sentiments)
+        raw_tweets =request.get_json()
+        tweets = clean_tweets(raw_tweets)
+        sentiments = []
+        
+        for tweet in tweets:
+            print(tweet[1])
+            sentiments.append(test(model, tweet[1]))
+            
+        tweets = generate_json(tweets,sentiments)
+    else:
+        tweets = 'error'
     
     return tweets
 
