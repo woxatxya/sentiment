@@ -22,10 +22,10 @@ import flask
 from flask import request
 from flask import Flask
 
-nltk.download('averaged_perceptron_tagger')
-nltk.download('wordnet')
-nltk.download('stopwords')
-nltk.download('punkt')
+#nltk.download('averaged_perceptron_tagger')
+#nltk.download('wordnet')
+#nltk.download('stopwords')
+#nltk.download('punkt')
 
 application = Flask(__name__)
 
