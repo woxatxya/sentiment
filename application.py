@@ -64,11 +64,10 @@ def test(model, test_text):
 
 def clean_tweets(raw_tweets):
     tweets = []
-    for num_city in range(len(raw_tweets)):
-        city = raw_tweets[num_city]['city_name']
-        for tweet_num in range(len(raw_tweets[0]['tweets'])):
-            tweets.append((city,raw_tweets[0]['tweets'][tweet_num]['text']))  
-    return tweets    
+    city = raw_tweets[0]['hash_tag']
+    for num in range(len(raw_tweets)):
+        tweets.append((city,raw_tweets[num]['text']))    
+    return tweets 
 
 def generate_json(tweets,sentiments):
     contents = []
