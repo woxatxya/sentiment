@@ -66,7 +66,7 @@ def clean_tweets(raw_tweets):
     tweets = []
     city = raw_tweets[0]['hash_tag']
     for num in range(len(raw_tweets)):
-        tweets.append((city,raw_tweets[num]['text']))    
+        tweets.append((city,raw_tweets[num]['text'],raw_tweets[num]['usernameTweet']))  
     return tweets 
 
 def generate_json(tweets,sentiments):
@@ -74,7 +74,8 @@ def generate_json(tweets,sentiments):
     for i in range(len(tweets)):
         contents.append({'city':tweets[i][0],
          'tweet':tweets[i][1],
-         'sentiment':sentiments[i]})
+         'sentiment':sentiments[i],
+         'usernameTweets':tweets[i][2]})
     contents = json.dumps(contents)
     return contents
 '''
